@@ -46,15 +46,15 @@ export default function Home() {
   }, [status]);
 
   if (status === "loading") {
-    return <Loader text="knowing who are you..." />;
+    return <Loader text="Authenticating..." />;
   }
 
   if (status === "authenticated" && todos === null) {
-    return <Loader text="Bringing your todos" />;
+    return <Loader text="Loading your todos..." />;
   }
 
   if (status === "unauthenticated") {
-    return;
+    return <Loader text="Redirecting to login..." />;
   }
 
   return (
